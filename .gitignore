@@ -27,6 +27,8 @@
 *.i*86
 *.x86_64
 *.hex
+ot_sender_test
+ot_receiver_test
 
 # Debug files
 *.dSYM/
