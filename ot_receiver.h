@@ -19,12 +19,12 @@ struct ot_receiver
 	sc25519 x[4];
 };
 
-typedef struct ot_receiver RECEIVER;
+typedef struct ot_receiver SIMPLEOT_RECEIVER;
 
-void receiver_maketable(RECEIVER *);
-void receiver_procS(RECEIVER *);
-void receiver_rsgen(RECEIVER *, unsigned char *, unsigned char *);
-void receiver_keygen(RECEIVER *, unsigned char (*)[HASHBYTES]);
+void receiver_maketable(SIMPLEOT_RECEIVER *);
+void receiver_procS(SIMPLEOT_RECEIVER *);
+void receiver_rsgen(SIMPLEOT_RECEIVER *, unsigned char *, unsigned char *);
+void receiver_keygen(SIMPLEOT_RECEIVER *, unsigned char (*)[HASHBYTES]);
 
 #endif //ifndef OT_RECEIVER_H
 

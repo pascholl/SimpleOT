@@ -10,7 +10,7 @@
 #include "network.h"
 #include "cpucycles.h"
 
-void ot_receiver_test(RECEIVER * receiver, int sockfd)
+void ot_receiver_test(SIMPLEOT_RECEIVER * receiver, int sockfd)
 {
 	int i, j, k;
 
@@ -68,7 +68,7 @@ int main(int argc, char * argv[])
 
 	long long t = 0;
 
-	RECEIVER receiver;
+	SIMPLEOT_RECEIVER receiver;
 
 	//
 

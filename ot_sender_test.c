@@ -8,7 +8,7 @@
 #include "network.h"
 #include "cpucycles.h"
 
-void ot_sender_test(SENDER * sender, int newsockfd)
+void ot_sender_test(SIMPLEOT_SENDER * sender, int newsockfd)
 {
 	int i, j, k;
 	unsigned char S_pack[ PACKBYTES ];
@@ -56,7 +56,7 @@ int main(int argc, char * argv[])
 
 	long long t = 0;
 
-	SENDER sender;
+	SIMPLEOT_SENDER sender;
 
 	//
 

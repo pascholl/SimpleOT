@@ -6,12 +6,12 @@
 #include "ge4x.h"
 #include "to_4x.h"
 
-void receiver_maketable(RECEIVER * r)
+void receiver_maketable(SIMPLEOT_RECEIVER * r)
 {
 	ge4x_maketable(r->table, &r->S, DIST);
 }
 
-void receiver_procS(RECEIVER * r)
+void receiver_procS(SIMPLEOT_RECEIVER * r)
 {
 	int i;
 
@@ -28,7 +28,7 @@ void receiver_procS(RECEIVER * r)
 	ge_to_4x(&r->S, &S);
 }
 
-void receiver_rsgen(RECEIVER * r, 
+void receiver_rsgen(SIMPLEOT_RECEIVER * r, 
                      unsigned char * Rs_pack,
                      unsigned char * cs)
 {
@@ -48,7 +48,7 @@ void receiver_rsgen(RECEIVER * r,
 
 }
 
-void receiver_keygen(RECEIVER * r, 
+void receiver_keygen(SIMPLEOT_RECEIVER * r, 
                      unsigned char (*keys)[HASHBYTES])
 {
 	int i;

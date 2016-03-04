@@ -14,10 +14,10 @@ struct ot_sender
 	ge4x yS;
 };
 
-typedef struct ot_sender SENDER;
+typedef struct ot_sender SIMPLEOT_SENDER;
 
-void sender_genS(SENDER *, unsigned char *);
-void sender_keygen(SENDER *, unsigned char *, unsigned char (*)[4][HASHBYTES]);
+void sender_genS(SIMPLEOT_SENDER *, unsigned char *);
+void sender_keygen(SIMPLEOT_SENDER *, unsigned char *, unsigned char (*)[4][HASHBYTES]);
 
 #endif //ifndef OT_SENDER_H
 
