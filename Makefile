@@ -51,7 +51,7 @@ OBJS+= gfe4x_add.o
 OBJS+= gfe4x_nsquare.o 
 OBJS+= gfe4x_square.o 
 OBJS+= gfe4x_getparity.o
-OBJS+= gfe4x_iseq_vartime.c
+OBJS+= gfe4x_iseq_vartime.o
 OBJS+= gfe4x_mul.o 
 OBJS+= gfe4x_pow2523.o
 OBJS+= gfe4x_sub.o 
@@ -69,7 +69,10 @@ OBJS+= consts4x.o
 
 ######################################################
 
-all: ot_sender_test ot_receiver_test
+all: ot_sender_test ot_receiver_test libsimpleot
+
+libsimpleot: $(OBJS)
+	$(AR) -crs libsimpleot.a $(OBJS)
 
 ot_sender_test: ot_sender_test.o $(OBJS)
 	$(CC) $(CFLAGS) -o $@ $^ 
@@ -91,4 +94,5 @@ clean:
 	-rm -f ot_sender_test 
 	-rm -f ot_receiver_test
 	-rm -f *.o
+	-rm -f libsimpleot.a
 
