@@ -1,6 +1,10 @@
 #ifndef OT_SENDER_H
 #define OT_SENDER_H
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 #include <stdio.h>
 
 #include "ge4x.h"
@@ -19,5 +23,8 @@ typedef struct ot_sender SIMPLEOT_SENDER;
 void sender_genS(SIMPLEOT_SENDER *, unsigned char *);
 void sender_keygen(SIMPLEOT_SENDER *, unsigned char *, unsigned char (*)[4][HASHBYTES]);
 
+#ifdef __cplusplus
+}
+#endif
 #endif //ifndef OT_SENDER_H
 
