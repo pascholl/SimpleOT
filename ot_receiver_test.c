@@ -29,7 +29,7 @@ void ot_receiver_test(SIMPLEOT_RECEIVER * receiver, int sockfd)
 
 	for (i = 0; i < NOTS; i += 4)
 	{
-		randombytes(cs, sizeof(cs));
+		simpleot_randombytes(cs, sizeof(cs));
 
 		for (j = 0; j < 4; j++)
 		{ 

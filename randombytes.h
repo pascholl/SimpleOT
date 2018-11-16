@@ -11,7 +11,7 @@ Public domain.
 extern "C" {
 #endif
 
-extern void randombytes(unsigned char *,unsigned long long);
+extern void simpleot_randombytes(unsigned char *,unsigned long long);
 
 #ifdef __cplusplus
 }

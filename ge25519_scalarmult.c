@@ -12,11 +12,11 @@ static void ge25519_idoubles(ge25519 * a, int n)
 	for (i = 0; i < n-1; i++)
 	{
 		ge25519_dbl_p1p1(&tp1p1, (ge25519_p2 *)a);
-		ge25519_p1p1_to_p2((ge25519_p2 *)a, &tp1p1);
+		simpleot_ge25519_p1p1_to_p2((ge25519_p2 *)a, &tp1p1);
 	}
 
 	ge25519_dbl_p1p1(&tp1p1, (ge25519_p2 *)a);
-	ge25519_p1p1_to_p3(a, &tp1p1);
+	simpleot_ge25519_p1p1_to_p3(a, &tp1p1);
 }
 
 static void ge25519_maketable(ge25519 (*table)[8], const ge25519 * b, int dist)
@@ -32,11 +32,11 @@ static void ge25519_maketable(ge25519 (*table)[8], const ge25519 * b, int dist)
 	{
 		table[i][1-1] = p;
 		ge25519_double(&table[i][2-1], &p);
-		ge25519_add(&table[i][3-1], &table[i][2-1], &p);
+		simpleot_ge25519_add(&table[i][3-1], &table[i][2-1], &p);
 		ge25519_double(&table[i][4-1], &table[i][2-1]);
-		ge25519_add(&table[i][5-1], &table[i][4-1], &p);
+		simpleot_ge25519_add(&table[i][5-1], &table[i][4-1], &p);
 		ge25519_double(&table[i][6-1], &table[i][3-1]);
-		ge25519_add(&table[i][7-1], &table[i][6-1], &p);
+		simpleot_ge25519_add(&table[i][7-1], &table[i][6-1], &p);
 		ge25519_double(&table[i][8-1], &table[i][4-1]);
 
 		if (i < n-1)
@@ -73,9 +73,9 @@ static void ge25519_scalarmult_table(ge25519 *r, ge25519 (*table)[8], const sc25
 			ge25519_add_p1p1(&t_p1p1, r, &t);
   		
 			if (i + dist < 64) 
-				ge25519_p1p1_to_p3(r, &t_p1p1);
+				simpleot_ge25519_p1p1_to_p3(r, &t_p1p1);
 			else
-				ge25519_p1p1_to_p2((ge25519_p2 *)r, &t_p1p1);
+				simpleot_ge25519_p1p1_to_p2((ge25519_p2 *)r, &t_p1p1);
 		}
 
 	}
@@ -92,14 +92,14 @@ static void ge25519_scalarmult_table(ge25519 *r, ge25519 (*table)[8], const sc25
 			ge25519_add_p1p1(&t_p1p1, r, &t);
 				
 			if (j + dist < 64 || i == 0) 
-				ge25519_p1p1_to_p3(r, &t_p1p1);
+				simpleot_ge25519_p1p1_to_p3(r, &t_p1p1);
 			else
-				ge25519_p1p1_to_p2((ge25519_p2 *)r, &t_p1p1);
+				simpleot_ge25519_p1p1_to_p2((ge25519_p2 *)r, &t_p1p1);
 		}
 	}
 }
 
-void ge25519_scalarmult(ge25519 * a, ge25519 * b, const sc25519 * s)
+void simpleot_ge25519_scalarmult(ge25519 * a, ge25519 * b, const sc25519 * s)
 {
 	ge25519 table[1][8];
 

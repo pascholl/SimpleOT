@@ -1,6 +1,6 @@
 #include "fe25519.h"
 
-void fe25519_invert(fe25519 *r, const fe25519 *x)
+void simpleot_fe25519_invert(fe25519 *r, const fe25519 *x)
 {
 	fe25519 z2;
 	fe25519 z9;

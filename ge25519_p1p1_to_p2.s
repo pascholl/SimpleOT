@@ -107,9 +107,9 @@
 .text
 .p2align 5
 .globl _ge25519_p1p1_to_p2
-.globl ge25519_p1p1_to_p2
+.globl simpleot_ge25519_p1p1_to_p2
 _ge25519_p1p1_to_p2:
-ge25519_p1p1_to_p2:
+simpleot_ge25519_p1p1_to_p2:
 mov %rsp,%r11
 and $31,%r11
 add $96,%r11

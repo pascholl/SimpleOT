@@ -5,7 +5,7 @@ void sc25519_random(sc25519 *r, int c)
 {
 	unsigned char x[32];
 
-	randombytes(x, 32);
+	simpleot_randombytes(x, 32);
 
 	if (c == 0) 
 	{

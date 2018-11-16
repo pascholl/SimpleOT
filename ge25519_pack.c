@@ -5,7 +5,7 @@
 void ge25519_pack(unsigned char r[32], const ge25519_p3 *p)
 {
   fe25519 tx, ty, zi;
-  fe25519_invert(&zi, &p->z); 
+  simpleot_fe25519_invert(&zi, &p->z); 
   fe25519_mul(&tx, &p->x, &zi);
   fe25519_mul(&ty, &p->y, &zi);
   fe25519_pack(r, &ty);
