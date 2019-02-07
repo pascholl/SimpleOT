@@ -99,7 +99,7 @@ sub %r11,%rsp
 # qhasm:   mul_nineteen aligned= mem256[scale19]
 # asm 1: vmovupd scale19,>mul_nineteen=reg256#1
 # asm 2: vmovupd scale19,>mul_nineteen=%ymm0
-vmovupd scale19,%ymm0
+vmovupd scale19(%rip),%ymm0
 
 # qhasm:   mul_x0 aligned= mem256[input_1 + 0]
 # asm 1: vmovupd   0(<input_1=int64#2),>mul_x0=reg256#2
@@ -1604,7 +1604,7 @@ vaddpd %ymm2,%ymm13,%ymm2
 # qhasm:   mul_c aligned= mem256[alpha22]
 # asm 1: vmovupd alpha22,>mul_c=reg256#14
 # asm 2: vmovupd alpha22,>mul_c=%ymm13
-vmovupd alpha22,%ymm13
+vmovupd alpha22(%rip),%ymm13
 
 # qhasm:   4x mul_t = approx r0 +mul_c
 # asm 1: vaddpd <r0=reg256#4,<mul_c=reg256#14,>mul_t=reg256#15
@@ -1629,7 +1629,7 @@ vaddpd %ymm13,%ymm4,%ymm4
 # qhasm:   mul_c aligned= mem256[alpha107]
 # asm 1: vmovupd alpha107,>mul_c=reg256#14
 # asm 2: vmovupd alpha107,>mul_c=%ymm13
-vmovupd alpha107,%ymm13
+vmovupd alpha107(%rip),%ymm13
 
 # qhasm:   4x mul_t = approx r4 +mul_c
 # asm 1: vaddpd <r4=reg256#8,<mul_c=reg256#14,>mul_t=reg256#15
@@ -1654,7 +1654,7 @@ vaddpd %ymm13,%ymm8,%ymm8
 # qhasm:   mul_c aligned= mem256[alpha192]
 # asm 1: vmovupd alpha192,>mul_c=reg256#14
 # asm 2: vmovupd alpha192,>mul_c=%ymm13
-vmovupd alpha192,%ymm13
+vmovupd alpha192(%rip),%ymm13
 
 # qhasm:   4x mul_t = approx r8 +mul_c
 # asm 1: vaddpd <r8=reg256#12,<mul_c=reg256#14,>mul_t=reg256#15
@@ -1679,7 +1679,7 @@ vaddpd %ymm13,%ymm12,%ymm12
 # qhasm:   mul_c aligned= mem256[alpha43]
 # asm 1: vmovupd alpha43,>mul_c=reg256#14
 # asm 2: vmovupd alpha43,>mul_c=%ymm13
-vmovupd alpha43,%ymm13
+vmovupd alpha43(%rip),%ymm13
 
 # qhasm:   4x mul_t = approx r1 +mul_c
 # asm 1: vaddpd <r1=reg256#5,<mul_c=reg256#14,>mul_t=reg256#15
@@ -1704,7 +1704,7 @@ vaddpd %ymm13,%ymm5,%ymm5
 # qhasm:   mul_c aligned= mem256[alpha128]
 # asm 1: vmovupd alpha128,>mul_c=reg256#14
 # asm 2: vmovupd alpha128,>mul_c=%ymm13
-vmovupd alpha128,%ymm13
+vmovupd alpha128(%rip),%ymm13
 
 # qhasm:   4x mul_t = approx r5 +mul_c
 # asm 1: vaddpd <r5=reg256#9,<mul_c=reg256#14,>mul_t=reg256#15
@@ -1729,7 +1729,7 @@ vaddpd %ymm13,%ymm9,%ymm9
 # qhasm:   mul_c aligned= mem256[alpha213]
 # asm 1: vmovupd alpha213,>mul_c=reg256#14
 # asm 2: vmovupd alpha213,>mul_c=%ymm13
-vmovupd alpha213,%ymm13
+vmovupd alpha213(%rip),%ymm13
 
 # qhasm:   4x mul_t = approx r9 +mul_c
 # asm 1: vaddpd <r9=reg256#13,<mul_c=reg256#14,>mul_t=reg256#15
@@ -1754,7 +1754,7 @@ vaddpd %ymm13,%ymm2,%ymm2
 # qhasm:   mul_c aligned= mem256[alpha64]
 # asm 1: vmovupd alpha64,>mul_c=reg256#14
 # asm 2: vmovupd alpha64,>mul_c=%ymm13
-vmovupd alpha64,%ymm13
+vmovupd alpha64(%rip),%ymm13
 
 # qhasm:   4x mul_t = approx r2 +mul_c
 # asm 1: vaddpd <r2=reg256#6,<mul_c=reg256#14,>mul_t=reg256#15
@@ -1779,7 +1779,7 @@ vaddpd %ymm13,%ymm6,%ymm6
 # qhasm:   mul_c aligned= mem256[alpha149]
 # asm 1: vmovupd alpha149,>mul_c=reg256#14
 # asm 2: vmovupd alpha149,>mul_c=%ymm13
-vmovupd alpha149,%ymm13
+vmovupd alpha149(%rip),%ymm13
 
 # qhasm:   4x mul_t = approx r6 +mul_c
 # asm 1: vaddpd <r6=reg256#10,<mul_c=reg256#14,>mul_t=reg256#15
@@ -1804,7 +1804,7 @@ vaddpd %ymm13,%ymm10,%ymm10
 # qhasm:   mul_c aligned= mem256[alpha234]
 # asm 1: vmovupd alpha234,>mul_c=reg256#14
 # asm 2: vmovupd alpha234,>mul_c=%ymm13
-vmovupd alpha234,%ymm13
+vmovupd alpha234(%rip),%ymm13
 
 # qhasm:   4x mul_t = approx r10 +mul_c
 # asm 1: vaddpd <r10=reg256#3,<mul_c=reg256#14,>mul_t=reg256#15
@@ -1829,7 +1829,7 @@ vaddpd %ymm13,%ymm1,%ymm1
 # qhasm:   mul_c aligned= mem256[alpha85]
 # asm 1: vmovupd alpha85,>mul_c=reg256#14
 # asm 2: vmovupd alpha85,>mul_c=%ymm13
-vmovupd alpha85,%ymm13
+vmovupd alpha85(%rip),%ymm13
 
 # qhasm:   4x mul_t = approx r3 +mul_c
 # asm 1: vaddpd <r3=reg256#7,<mul_c=reg256#14,>mul_t=reg256#15
@@ -1854,7 +1854,7 @@ vaddpd %ymm13,%ymm7,%ymm7
 # qhasm:   mul_c aligned= mem256[alpha170]
 # asm 1: vmovupd alpha170,>mul_c=reg256#14
 # asm 2: vmovupd alpha170,>mul_c=%ymm13
-vmovupd alpha170,%ymm13
+vmovupd alpha170(%rip),%ymm13
 
 # qhasm:   4x mul_t = approx r7 +mul_c
 # asm 1: vaddpd <r7=reg256#11,<mul_c=reg256#14,>mul_t=reg256#15
@@ -1879,7 +1879,7 @@ vaddpd %ymm13,%ymm11,%ymm11
 # qhasm:   mul_c aligned= mem256[alpha255]
 # asm 1: vmovupd alpha255,>mul_c=reg256#14
 # asm 2: vmovupd alpha255,>mul_c=%ymm13
-vmovupd alpha255,%ymm13
+vmovupd alpha255(%rip),%ymm13
 
 # qhasm:   4x mul_t = approx r11 +mul_c
 # asm 1: vaddpd <r11=reg256#2,<mul_c=reg256#14,>mul_t=reg256#15
@@ -1909,7 +1909,7 @@ vaddpd %ymm0,%ymm3,%ymm0
 # qhasm:   mul_c aligned= mem256[alpha22]
 # asm 1: vmovupd alpha22,>mul_c=reg256#4
 # asm 2: vmovupd alpha22,>mul_c=%ymm3
-vmovupd alpha22,%ymm3
+vmovupd alpha22(%rip),%ymm3
 
 # qhasm:   4x mul_t = approx r0 +mul_c
 # asm 1: vaddpd <r0=reg256#1,<mul_c=reg256#4,>mul_t=reg256#14
@@ -1934,7 +1934,7 @@ vaddpd %ymm3,%ymm4,%ymm3
 # qhasm:   mul_c aligned= mem256[alpha107]
 # asm 1: vmovupd alpha107,>mul_c=reg256#5
 # asm 2: vmovupd alpha107,>mul_c=%ymm4
-vmovupd alpha107,%ymm4
+vmovupd alpha107(%rip),%ymm4
 
 # qhasm:   4x mul_t = approx r4 +mul_c
 # asm 1: vaddpd <r4=reg256#8,<mul_c=reg256#5,>mul_t=reg256#14
@@ -1959,7 +1959,7 @@ vaddpd %ymm4,%ymm8,%ymm4
 # qhasm:   mul_c aligned= mem256[alpha192]
 # asm 1: vmovupd alpha192,>mul_c=reg256#9
 # asm 2: vmovupd alpha192,>mul_c=%ymm8
-vmovupd alpha192,%ymm8
+vmovupd alpha192(%rip),%ymm8
 
 # qhasm:   4x mul_t = approx r8 +mul_c
 # asm 1: vaddpd <r8=reg256#12,<mul_c=reg256#9,>mul_t=reg256#14

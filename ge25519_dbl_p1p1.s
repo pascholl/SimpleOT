@@ -651,7 +651,7 @@ adc %rdx,%r14
 # qhasm:   squareredmask = *(uint64 *) &CONST_REDMASK51
 # asm 1: movq CONST_REDMASK51,>squareredmask=int64#3
 # asm 2: movq CONST_REDMASK51,>squareredmask=%rdx
-movq CONST_REDMASK51,%rdx
+movq CONST_REDMASK51(%rip),%rdx
 
 # qhasm:   squarer01 = (squarer01.a0) << 13
 # asm 1: shld $13,<a0=int64#4,<squarer01=int64#5
@@ -1226,7 +1226,7 @@ adc %rdx,%r14
 # qhasm:   squareredmask = *(uint64 *) &CONST_REDMASK51
 # asm 1: movq CONST_REDMASK51,>squareredmask=int64#3
 # asm 2: movq CONST_REDMASK51,>squareredmask=%rdx
-movq CONST_REDMASK51,%rdx
+movq CONST_REDMASK51(%rip),%rdx
 
 # qhasm:   squarer01 = (squarer01.b0) << 13
 # asm 1: shld $13,<b0=int64#4,<squarer01=int64#5
@@ -1801,7 +1801,7 @@ adc %rdx,%r14
 # qhasm:   squareredmask = *(uint64 *) &CONST_REDMASK51
 # asm 1: movq CONST_REDMASK51,>squareredmask=int64#3
 # asm 2: movq CONST_REDMASK51,>squareredmask=%rdx
-movq CONST_REDMASK51,%rdx
+movq CONST_REDMASK51(%rip),%rdx
 
 # qhasm:   squarer01 = (squarer01.c0) << 13
 # asm 1: shld $13,<c0=int64#4,<squarer01=int64#5
@@ -2041,27 +2041,27 @@ movq %r11,168(%rsp)
 # qhasm: d0 = *(uint64 *)&CONST_2P0
 # asm 1: movq CONST_2P0,>d0=int64#3
 # asm 2: movq CONST_2P0,>d0=%rdx
-movq CONST_2P0,%rdx
+movq CONST_2P0(%rip),%rdx
 
 # qhasm: d1 = *(uint64 *)&CONST_2P1234
 # asm 1: movq CONST_2P1234,>d1=int64#4
 # asm 2: movq CONST_2P1234,>d1=%rcx
-movq CONST_2P1234,%rcx
+movq CONST_2P1234(%rip),%rcx
 
 # qhasm: d2 = *(uint64 *)&CONST_2P1234
 # asm 1: movq CONST_2P1234,>d2=int64#5
 # asm 2: movq CONST_2P1234,>d2=%r8
-movq CONST_2P1234,%r8
+movq CONST_2P1234(%rip),%r8
 
 # qhasm: d3 = *(uint64 *)&CONST_2P1234
 # asm 1: movq CONST_2P1234,>d3=int64#6
 # asm 2: movq CONST_2P1234,>d3=%r9
-movq CONST_2P1234,%r9
+movq CONST_2P1234(%rip),%r9
 
 # qhasm: d4 = *(uint64 *)&CONST_2P1234
 # asm 1: movq CONST_2P1234,>d4=int64#7
 # asm 2: movq CONST_2P1234,>d4=%rax
-movq CONST_2P1234,%rax
+movq CONST_2P1234(%rip),%rax
 
 # qhasm: e0 = d0
 # asm 1: mov  <d0=int64#3,>e0=int64#8
@@ -2266,27 +2266,27 @@ movq   %r14,72(%rdi)
 # qhasm: d0 += *(uint64 *)&CONST_2P0
 # asm 1: add  CONST_2P0,<d0=int64#3
 # asm 2: add  CONST_2P0,<d0=%rdx
-add  CONST_2P0,%rdx
+add  CONST_2P0(%rip),%rdx
 
 # qhasm: d1 += *(uint64 *)&CONST_2P1234
 # asm 1: add  CONST_2P1234,<d1=int64#4
 # asm 2: add  CONST_2P1234,<d1=%rcx
-add  CONST_2P1234,%rcx
+add  CONST_2P1234(%rip),%rcx
 
 # qhasm: d2 += *(uint64 *)&CONST_2P1234
 # asm 1: add  CONST_2P1234,<d2=int64#5
 # asm 2: add  CONST_2P1234,<d2=%r8
-add  CONST_2P1234,%r8
+add  CONST_2P1234(%rip),%r8
 
 # qhasm: d3 += *(uint64 *)&CONST_2P1234
 # asm 1: add  CONST_2P1234,<d3=int64#6
 # asm 2: add  CONST_2P1234,<d3=%r9
-add  CONST_2P1234,%r9
+add  CONST_2P1234(%rip),%r9
 
 # qhasm: d4 += *(uint64 *)&CONST_2P1234
 # asm 1: add  CONST_2P1234,<d4=int64#7
 # asm 2: add  CONST_2P1234,<d4=%rax
-add  CONST_2P1234,%rax
+add  CONST_2P1234(%rip),%rax
 
 # qhasm: d0 -= b0_stack
 # asm 1: subq <b0_stack=stack64#13,<d0=int64#3
@@ -2341,27 +2341,27 @@ movq   %rax,112(%rdi)
 # qhasm: rz0 += *(uint64 *)&CONST_4P0
 # asm 1: add  CONST_4P0,<rz0=int64#8
 # asm 2: add  CONST_4P0,<rz0=%r10
-add  CONST_4P0,%r10
+add  CONST_4P0(%rip),%r10
 
 # qhasm: rz1 += *(uint64 *)&CONST_4P1234
 # asm 1: add  CONST_4P1234,<rz1=int64#9
 # asm 2: add  CONST_4P1234,<rz1=%r11
-add  CONST_4P1234,%r11
+add  CONST_4P1234(%rip),%r11
 
 # qhasm: rz2 += *(uint64 *)&CONST_4P1234
 # asm 1: add  CONST_4P1234,<rz2=int64#10
 # asm 2: add  CONST_4P1234,<rz2=%r12
-add  CONST_4P1234,%r12
+add  CONST_4P1234(%rip),%r12
 
 # qhasm: rz3 += *(uint64 *)&CONST_4P1234
 # asm 1: add  CONST_4P1234,<rz3=int64#11
 # asm 2: add  CONST_4P1234,<rz3=%r13
-add  CONST_4P1234,%r13
+add  CONST_4P1234(%rip),%r13
 
 # qhasm: rz4 += *(uint64 *)&CONST_4P1234
 # asm 1: add  CONST_4P1234,<rz4=int64#12
 # asm 2: add  CONST_4P1234,<rz4=%r14
-add  CONST_4P1234,%r14
+add  CONST_4P1234(%rip),%r14
 
 # qhasm: rz0 -= c0_stack
 # asm 1: subq <c0_stack=stack64#18,<rz0=int64#8
@@ -2851,7 +2851,7 @@ adc %rdx,%r13
 # qhasm:   squareredmask = *(uint64 *) &CONST_REDMASK51
 # asm 1: movq CONST_REDMASK51,>squareredmask=int64#3
 # asm 2: movq CONST_REDMASK51,>squareredmask=%rdx
-movq CONST_REDMASK51,%rdx
+movq CONST_REDMASK51(%rip),%rdx
 
 # qhasm:   squarer01 = (squarer01.rx0) << 13
 # asm 1: shld $13,<rx0=int64#2,<squarer01=int64#4

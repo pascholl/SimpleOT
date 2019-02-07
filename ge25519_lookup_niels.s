@@ -1683,27 +1683,27 @@ cmove %rsi,%r10
 # qhasm: tt0 = *(uint64 *)&CONST_2P0
 # asm 1: movq CONST_2P0,>tt0=int64#2
 # asm 2: movq CONST_2P0,>tt0=%rsi
-movq CONST_2P0,%rsi
+movq CONST_2P0(%rip),%rsi
 
 # qhasm: tt1 = *(uint64 *)&CONST_2P1234
 # asm 1: movq CONST_2P1234,>tt1=int64#4
 # asm 2: movq CONST_2P1234,>tt1=%rcx
-movq CONST_2P1234,%rcx
+movq CONST_2P1234(%rip),%rcx
 
 # qhasm: tt2 = *(uint64 *)&CONST_2P1234
 # asm 1: movq CONST_2P1234,>tt2=int64#9
 # asm 2: movq CONST_2P1234,>tt2=%r11
-movq CONST_2P1234,%r11
+movq CONST_2P1234(%rip),%r11
 
 # qhasm: tt3 = *(uint64 *)&CONST_2P1234
 # asm 1: movq CONST_2P1234,>tt3=int64#10
 # asm 2: movq CONST_2P1234,>tt3=%r12
-movq CONST_2P1234,%r12
+movq CONST_2P1234(%rip),%r12
 
 # qhasm: tt4 = *(uint64 *)&CONST_2P1234
 # asm 1: movq CONST_2P1234,>tt4=int64#11
 # asm 2: movq CONST_2P1234,>tt4=%r13
-movq CONST_2P1234,%r13
+movq CONST_2P1234(%rip),%r13
 
 # qhasm: tt0 -= tt2d0
 # asm 1: sub  <tt2d0=int64#1,<tt0=int64#2
