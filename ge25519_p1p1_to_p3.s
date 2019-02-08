@@ -116,10 +116,10 @@
 # qhasm: enter ge25519_p1p1_to_p3
 .text
 .p2align 5
-.globl _ge25519_p1p1_to_p3
-.globl ge25519_p1p1_to_p3
-_ge25519_p1p1_to_p3:
-ge25519_p1p1_to_p3:
+.globl _simpleot_ge25519_p1p1_to_p3
+.globl simpleot_ge25519_p1p1_to_p3
+_simpleot_ge25519_p1p1_to_p3:
+simpleot_ge25519_p1p1_to_p3:
 mov %rsp,%r11
 and $31,%r11
 add $96,%r11
@@ -698,7 +698,7 @@ adc %rdx,%r14
 # qhasm:   mulredmask = *(uint64 *) &CONST_REDMASK51
 # asm 1: movq CONST_REDMASK51,>mulredmask=int64#3
 # asm 2: movq CONST_REDMASK51,>mulredmask=%rdx
-movq CONST_REDMASK51,%rdx
+movq CONST_REDMASK51(%rip),%rdx
 
 # qhasm:   mulr01 = (mulr01.rx0) << 13
 # asm 1: shld $13,<rx0=int64#4,<mulr01=int64#5
@@ -1448,7 +1448,7 @@ adc %rdx,%r14
 # qhasm:   mulredmask = *(uint64 *) &CONST_REDMASK51
 # asm 1: movq CONST_REDMASK51,>mulredmask=int64#3
 # asm 2: movq CONST_REDMASK51,>mulredmask=%rdx
-movq CONST_REDMASK51,%rdx
+movq CONST_REDMASK51(%rip),%rdx
 
 # qhasm:   mulr01 = (mulr01.ry0) << 13
 # asm 1: shld $13,<ry0=int64#4,<mulr01=int64#5
@@ -2198,7 +2198,7 @@ adc %rdx,%r14
 # qhasm:   mulredmask = *(uint64 *) &CONST_REDMASK51
 # asm 1: movq CONST_REDMASK51,>mulredmask=int64#3
 # asm 2: movq CONST_REDMASK51,>mulredmask=%rdx
-movq CONST_REDMASK51,%rdx
+movq CONST_REDMASK51(%rip),%rdx
 
 # qhasm:   mulr01 = (mulr01.rz0) << 13
 # asm 1: shld $13,<rz0=int64#4,<mulr01=int64#5
@@ -2948,7 +2948,7 @@ adc %rdx,%r14
 # qhasm:   mulredmask = *(uint64 *) &CONST_REDMASK51
 # asm 1: movq CONST_REDMASK51,>mulredmask=int64#2
 # asm 2: movq CONST_REDMASK51,>mulredmask=%rsi
-movq CONST_REDMASK51,%rsi
+movq CONST_REDMASK51(%rip),%rsi
 
 # qhasm:   mulr01 = (mulr01.rt0) << 13
 # asm 1: shld $13,<rt0=int64#4,<mulr01=int64#5

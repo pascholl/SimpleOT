@@ -495,7 +495,7 @@ adc %rdx,%r14
 # qhasm:   squareredmask = *(uint64 *) &CONST_REDMASK51
 # asm 1: movq CONST_REDMASK51,>squareredmask=int64#2
 # asm 2: movq CONST_REDMASK51,>squareredmask=%rsi
-movq CONST_REDMASK51,%rsi
+movq CONST_REDMASK51(%rip),%rsi
 
 # qhasm:   squarer01 = (squarer01.r0) << 13
 # asm 1: shld $13,<r0=int64#4,<squarer01=int64#5

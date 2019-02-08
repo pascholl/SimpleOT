@@ -1,5 +1,5 @@
 CC = /usr/bin/gcc
-CFLAGS = -O3 -Wall -Wextra -no-pie
+CFLAGS = -O3 -Wall -Wextra
 
 ######################################################
 

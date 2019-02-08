@@ -10,7 +10,7 @@ static const ge25519_niels ge25519_base_multiples_niels[] = {
 
 extern void ge25519_lookup_niels_asm(ge25519_niels *, const ge25519_niels *, const char *);
 
-void ge25519_scalarmult_base(ge25519_p3 *r, const sc25519 *s)
+void simpleot_ge25519_scalarmult_base(ge25519_p3 *r, const sc25519 *s)
 {
   char b[64];
   int i;

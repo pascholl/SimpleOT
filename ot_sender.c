@@ -16,7 +16,7 @@ void sender_genS(SIMPLEOT_SENDER * s, unsigned char * S_pack)
 
 	sc25519_random(&s->y, 0);
 
-	ge25519_scalarmult_base(&S, &s->y); // S	
+	simpleot_ge25519_scalarmult_base(&S, &s->y); // S	
 
 	ge25519_pack(S_pack, &S); // E^0(S)
 
@@ -24,7 +24,7 @@ void sender_genS(SIMPLEOT_SENDER * s, unsigned char * S_pack)
 
 	ge25519_pack(s->S_pack, &S); // E_1(S)
 
-	ge25519_scalarmult(&yS, &S, &s->y);	
+	simpleot_ge25519_scalarmult(&yS, &S, &s->y);	
 	for (i = 0; i < 3; i++) ge25519_double(&yS, &yS); // 64T
 	ge_to_4x(&s->yS, &yS);
 }

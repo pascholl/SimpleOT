@@ -254,12 +254,12 @@ vmovupd 0(%rsp),%ymm1
 # qhasm: allone aligned= mem256[_allone]
 # asm 1: vmovupd _allone,>allone=reg256#3
 # asm 2: vmovupd _allone,>allone=%ymm2
-vmovupd _allone,%ymm2
+vmovupd _allone(%rip),%ymm2
 
 # qhasm: i aligned= mem256[_idx0]
 # asm 1: vmovupd _idx0,>i=reg256#4
 # asm 2: vmovupd _idx0,>i=%ymm3
-vmovupd _idx0,%ymm3
+vmovupd _idx0(%rip),%ymm3
 
 # qhasm: mask0 = (v == i)
 # asm 1: vcmpeqpd <v=reg256#1,<i=reg256#4,>mask0=reg256#4
@@ -269,7 +269,7 @@ vcmpeqpd %ymm0,%ymm3,%ymm3
 # qhasm: i aligned= mem256[_idx_1]
 # asm 1: vmovupd _idx_1,>i=reg256#5
 # asm 2: vmovupd _idx_1,>i=%ymm4
-vmovupd _idx_1,%ymm4
+vmovupd _idx_1(%rip),%ymm4
 
 # qhasm: res0 = (v == i)
 # asm 1: vcmpeqpd <v=reg256#1,<i=reg256#5,>res0=reg256#5
@@ -279,7 +279,7 @@ vcmpeqpd %ymm0,%ymm4,%ymm4
 # qhasm: i aligned= mem256[_idx1]
 # asm 1: vmovupd _idx1,>i=reg256#6
 # asm 2: vmovupd _idx1,>i=%ymm5
-vmovupd _idx1,%ymm5
+vmovupd _idx1(%rip),%ymm5
 
 # qhasm: res1 = (v == i)
 # asm 1: vcmpeqpd <v=reg256#1,<i=reg256#6,>res1=reg256#6
@@ -294,7 +294,7 @@ vorpd  %ymm4,%ymm5,%ymm4
 # qhasm: i aligned= mem256[_idx_2]
 # asm 1: vmovupd _idx_2,>i=reg256#6
 # asm 2: vmovupd _idx_2,>i=%ymm5
-vmovupd _idx_2,%ymm5
+vmovupd _idx_2(%rip),%ymm5
 
 # qhasm: res0 = (v == i)
 # asm 1: vcmpeqpd <v=reg256#1,<i=reg256#6,>res0=reg256#6
@@ -304,7 +304,7 @@ vcmpeqpd %ymm0,%ymm5,%ymm5
 # qhasm: i aligned= mem256[_idx2]
 # asm 1: vmovupd _idx2,>i=reg256#7
 # asm 2: vmovupd _idx2,>i=%ymm6
-vmovupd _idx2,%ymm6
+vmovupd _idx2(%rip),%ymm6
 
 # qhasm: res1 = (v == i)
 # asm 1: vcmpeqpd <v=reg256#1,<i=reg256#7,>res1=reg256#7
@@ -319,7 +319,7 @@ vorpd  %ymm5,%ymm6,%ymm5
 # qhasm: i aligned= mem256[_idx_3]
 # asm 1: vmovupd _idx_3,>i=reg256#7
 # asm 2: vmovupd _idx_3,>i=%ymm6
-vmovupd _idx_3,%ymm6
+vmovupd _idx_3(%rip),%ymm6
 
 # qhasm: res0 = (v == i)
 # asm 1: vcmpeqpd <v=reg256#1,<i=reg256#7,>res0=reg256#7
@@ -329,7 +329,7 @@ vcmpeqpd %ymm0,%ymm6,%ymm6
 # qhasm: i aligned= mem256[_idx3]
 # asm 1: vmovupd _idx3,>i=reg256#8
 # asm 2: vmovupd _idx3,>i=%ymm7
-vmovupd _idx3,%ymm7
+vmovupd _idx3(%rip),%ymm7
 
 # qhasm: res1 = (v == i)
 # asm 1: vcmpeqpd <v=reg256#1,<i=reg256#8,>res1=reg256#8
@@ -344,7 +344,7 @@ vorpd  %ymm6,%ymm7,%ymm6
 # qhasm: i aligned= mem256[_idx_4]
 # asm 1: vmovupd _idx_4,>i=reg256#8
 # asm 2: vmovupd _idx_4,>i=%ymm7
-vmovupd _idx_4,%ymm7
+vmovupd _idx_4(%rip),%ymm7
 
 # qhasm: res0 = (v == i)
 # asm 1: vcmpeqpd <v=reg256#1,<i=reg256#8,>res0=reg256#8
@@ -354,7 +354,7 @@ vcmpeqpd %ymm0,%ymm7,%ymm7
 # qhasm: i aligned= mem256[_idx4]
 # asm 1: vmovupd _idx4,>i=reg256#9
 # asm 2: vmovupd _idx4,>i=%ymm8
-vmovupd _idx4,%ymm8
+vmovupd _idx4(%rip),%ymm8
 
 # qhasm: res1 = (v == i)
 # asm 1: vcmpeqpd <v=reg256#1,<i=reg256#9,>res1=reg256#9
@@ -369,7 +369,7 @@ vorpd  %ymm7,%ymm8,%ymm7
 # qhasm: i aligned= mem256[_idx_5]
 # asm 1: vmovupd _idx_5,>i=reg256#9
 # asm 2: vmovupd _idx_5,>i=%ymm8
-vmovupd _idx_5,%ymm8
+vmovupd _idx_5(%rip),%ymm8
 
 # qhasm: res0 = (v == i)
 # asm 1: vcmpeqpd <v=reg256#1,<i=reg256#9,>res0=reg256#9
@@ -379,7 +379,7 @@ vcmpeqpd %ymm0,%ymm8,%ymm8
 # qhasm: i aligned= mem256[_idx5]
 # asm 1: vmovupd _idx5,>i=reg256#10
 # asm 2: vmovupd _idx5,>i=%ymm9
-vmovupd _idx5,%ymm9
+vmovupd _idx5(%rip),%ymm9
 
 # qhasm: res1 = (v == i)
 # asm 1: vcmpeqpd <v=reg256#1,<i=reg256#10,>res1=reg256#10
@@ -394,7 +394,7 @@ vorpd  %ymm8,%ymm9,%ymm8
 # qhasm: i aligned= mem256[_idx_6]
 # asm 1: vmovupd _idx_6,>i=reg256#10
 # asm 2: vmovupd _idx_6,>i=%ymm9
-vmovupd _idx_6,%ymm9
+vmovupd _idx_6(%rip),%ymm9
 
 # qhasm: res0 = (v == i)
 # asm 1: vcmpeqpd <v=reg256#1,<i=reg256#10,>res0=reg256#10
@@ -404,7 +404,7 @@ vcmpeqpd %ymm0,%ymm9,%ymm9
 # qhasm: i aligned= mem256[_idx6]
 # asm 1: vmovupd _idx6,>i=reg256#11
 # asm 2: vmovupd _idx6,>i=%ymm10
-vmovupd _idx6,%ymm10
+vmovupd _idx6(%rip),%ymm10
 
 # qhasm: res1 = (v == i)
 # asm 1: vcmpeqpd <v=reg256#1,<i=reg256#11,>res1=reg256#11
@@ -419,7 +419,7 @@ vorpd  %ymm9,%ymm10,%ymm9
 # qhasm: i aligned= mem256[_idx_7]
 # asm 1: vmovupd _idx_7,>i=reg256#11
 # asm 2: vmovupd _idx_7,>i=%ymm10
-vmovupd _idx_7,%ymm10
+vmovupd _idx_7(%rip),%ymm10
 
 # qhasm: res0 = (v == i)
 # asm 1: vcmpeqpd <v=reg256#1,<i=reg256#11,>res0=reg256#11
@@ -429,7 +429,7 @@ vcmpeqpd %ymm0,%ymm10,%ymm10
 # qhasm: i aligned= mem256[_idx7]
 # asm 1: vmovupd _idx7,>i=reg256#12
 # asm 2: vmovupd _idx7,>i=%ymm11
-vmovupd _idx7,%ymm11
+vmovupd _idx7(%rip),%ymm11
 
 # qhasm: res1 = (v == i)
 # asm 1: vcmpeqpd <v=reg256#1,<i=reg256#12,>res1=reg256#12
@@ -444,7 +444,7 @@ vorpd  %ymm10,%ymm11,%ymm10
 # qhasm: i aligned= mem256[_idx_8]
 # asm 1: vmovupd _idx_8,>i=reg256#12
 # asm 2: vmovupd _idx_8,>i=%ymm11
-vmovupd _idx_8,%ymm11
+vmovupd _idx_8(%rip),%ymm11
 
 # qhasm: mask8 = (v == i)
 # asm 1: vcmpeqpd <v=reg256#1,<i=reg256#12,>mask8=reg256#12
@@ -454,7 +454,7 @@ vcmpeqpd %ymm0,%ymm11,%ymm11
 # qhasm: F0 aligned= mem256[_F0]
 # asm 1: vmovupd _F0,>F0=reg256#13
 # asm 2: vmovupd _F0,>F0=%ymm12
-vmovupd _F0,%ymm12
+vmovupd _F0(%rip),%ymm12
 
 # qhasm: flip = v^F0
 # asm 1: vxorpd <v=reg256#1,<F0=reg256#13,>flip=reg256#1
@@ -469,7 +469,7 @@ vsubpd %ymm12,%ymm0,%ymm0
 # qhasm: mzero aligned= mem256[_mzero]
 # asm 1: vmovupd _mzero,>mzero=reg256#13
 # asm 2: vmovupd _mzero,>mzero=%ymm12
-vmovupd _mzero,%ymm12
+vmovupd _mzero(%rip),%ymm12
 
 # qhasm: flip &= mzero
 # asm 1: vandpd <mzero=reg256#13,<flip=reg256#1,<flip=reg256#1
@@ -479,7 +479,7 @@ vandpd %ymm12,%ymm0,%ymm0
 # qhasm: t0 = mem256[_one]
 # asm 1: vmovupd _one,>t0=reg256#13
 # asm 2: vmovupd _one,>t0=%ymm12
-vmovupd _one,%ymm12
+vmovupd _one(%rip),%ymm12
 
 # qhasm: t0 &= mask0
 # asm 1: vandpd <mask0=reg256#4,<t0=reg256#13,<t0=reg256#13

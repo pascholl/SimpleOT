@@ -7,7 +7,7 @@
 
 static int fd = -1;
 
-void randombytes(unsigned char *x,unsigned long long xlen)
+void simpleot_randombytes(unsigned char *x,unsigned long long xlen)
 {
   int i;
 

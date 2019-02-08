@@ -41,7 +41,7 @@ void fe25519_square(fe25519 *r, const fe25519 *x);
 
 void fe25519_nsquare(fe25519 *r, unsigned long long n);
 
-void fe25519_invert(fe25519 *r, const fe25519 *x); 
+void simpleot_fe25519_invert(fe25519 *r, const fe25519 *x); 
 
 void fe25519_pow2523(fe25519 *r, const fe25519 *x); 
 

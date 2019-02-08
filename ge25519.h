@@ -52,8 +52,8 @@ typedef struct
   fe25519 t2d;
 } ge25519_pniels;
 
-extern void ge25519_p1p1_to_p2(ge25519_p2 *r, const ge25519_p1p1 *p);
-extern void ge25519_p1p1_to_p3(ge25519_p3 *r, const ge25519_p1p1 *p);
+extern void simpleot_ge25519_p1p1_to_p2(ge25519_p2 *r, const ge25519_p1p1 *p);
+extern void simpleot_ge25519_p1p1_to_p3(ge25519_p3 *r, const ge25519_p1p1 *p);
 extern void ge25519_p1p1_to_pniels(ge25519_pniels *r, const ge25519_p1p1 *p);
 extern void ge25519_add_p1p1(ge25519_p1p1 *r, const ge25519_p3 *p, const ge25519_p3 *q);
 extern void ge25519_dbl_p1p1(ge25519_p1p1 *r, const ge25519_p2 *p);
@@ -75,14 +75,14 @@ extern void ge25519_pack(unsigned char r[32], const ge25519 *p); //
 
 extern int ge25519_isneutral_vartime(const ge25519 *p); //
 
-extern void ge25519_add(ge25519 *r, const ge25519 *p, const ge25519 *q); //
+extern void simpleot_ge25519_add(ge25519 *r, const ge25519 *p, const ge25519 *q); //
 
 extern void ge25519_subtract(ge25519 *r, const ge25519 *p, const ge25519 *q); //
 
 extern void ge25519_double(ge25519 *r, const ge25519 *p); //
 
-extern void ge25519_scalarmult(ge25519 *q, ge25519 *r, const sc25519 *s); //
-extern void ge25519_scalarmult_base(ge25519 *r, const sc25519 *s); //
+extern void simpleot_ge25519_scalarmult(ge25519 *q, ge25519 *r, const sc25519 *s); //
+extern void simpleot_ge25519_scalarmult_base(ge25519 *r, const sc25519 *s); //
 
 #endif
 
