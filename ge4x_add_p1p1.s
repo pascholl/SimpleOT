@@ -109,7 +109,7 @@ sub %r11,%rsp
 # qhasm: input_3 = Gk
 # asm 1: mov  $Gk,>input_3=int64#4
 # asm 2: mov  $Gk,>input_3=%rcx
-#mov  $(rel Gk),%rcx
+#mov  $Gk, %rcx
 
 # replace the above for 64-bit PIE
 # https://stackoverflow.com/questions/52344336/gas-asm-pie-x86-64-access-variable-with-lea-instruction
