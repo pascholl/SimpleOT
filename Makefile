@@ -1,5 +1,11 @@
 CC = /usr/bin/gcc
 CFLAGS = -O3 -Wall -Wextra
+AS = $(CC) $(CFLAGS) -c
+
+# necessary due to shortcomings of LLVM on macOS
+ifeq ($(shell uname -s), Darwin)
+AS = yasm -r cpp -p gas -f macho64
+endif
 
 ######################################################
 
@@ -83,8 +89,8 @@ ot_receiver_test: ot_receiver_test.o $(OBJS)
 %.o: %.c 
 	$(CC) $(CFLAGS) -c $<
 
-%.o: %.s
-	$(CC) $(CFLAGS) -c $<
+%.o: %.S
+	$(AS) $<
 
 ######################################################
 
