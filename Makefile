@@ -2,13 +2,6 @@ CC = /usr/bin/gcc
 CFLAGS = -O3 -Wall -Wextra
 AS = $(CC) $(CFLAGS) -c
 
-# necessary due to shortcomings of LLVM on macOS
-ifeq ($(shell uname -s), Darwin)
-AS = yasm -r cpp -p gas -f macho64
-endif
-
-######################################################
-
 OBJS+= Keccak-simple.o
 OBJS+= randombytes.o
 OBJS+= cpucycles.o
