@@ -110,14 +110,7 @@ sub %r11,%rsp
 # qhasm: input_3 = Gk
 # asm 1: mov  $Gk,>input_3=int64#4
 # asm 2: mov  $Gk,>input_3=%rcx
-#mov  $Gk, %rcx
-
-# replace the above for 64-bit PIE
-# https://stackoverflow.com/questions/52344336/gas-asm-pie-x86-64-access-variable-with-lea-instruction
-
-        call Label
-Label:  pop %rcx
-        add $cvariable(Gk)-Label, %rcx
+mov  cvariable(Gk)@GOTPCREL(%rip), %rcx
 
 # qhasm: r0 aligned= mem256[input_1 + 384]
 # asm 1: vmovupd   384(<input_1=int64#2),>r0=reg256#1
