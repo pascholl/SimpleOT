@@ -6,6 +6,7 @@ extern "C" {
 #endif
 
 #include <stdio.h>
+#include <stdbool.h>
 
 #include "ge4x.h"
 #include "sc25519.h"
@@ -22,6 +23,7 @@ typedef struct ot_sender SIMPLEOT_SENDER;
 
 void sender_genS(SIMPLEOT_SENDER *, unsigned char *);
 void sender_keygen(SIMPLEOT_SENDER *, unsigned char *, unsigned char (*)[4][HASHBYTES]);
+bool sender_keygen_check(SIMPLEOT_SENDER *, unsigned char *, unsigned char (*)[4][HASHBYTES]);
 
 #ifdef __cplusplus
 }
