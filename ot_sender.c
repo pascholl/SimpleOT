@@ -33,6 +33,18 @@ void sender_keygen(SIMPLEOT_SENDER * s,
                    unsigned char * Rs_pack, 
                    unsigned char (*keys)[4][HASHBYTES])
 {
+	bool success = sender_keygen_check(s, Rs_pack, keys);
+	if (!success)
+	{
+		fprintf(stderr, "Error: point decompression failed\n");
+		exit(-1);
+	}
+}
+
+bool sender_keygen_check(SIMPLEOT_SENDER * s, 
+                         unsigned char * Rs_pack, 
+                         unsigned char (*keys)[4][HASHBYTES])
+{
 	int i;
 
 	ge4x P0;
@@ -43,7 +55,7 @@ void sender_keygen(SIMPLEOT_SENDER * s,
 
 	if (ge4x_unpack_vartime(&Rs, Rs_pack) != 0)
 	{ 
-		fprintf(stderr, "Error: point decompression failed\n"); exit(-1);
+		return false;
 	}
 
 	for (i = 0; i < 3; i++) ge4x_double(&Rs, &Rs); // 64R^i
@@ -55,5 +67,6 @@ void sender_keygen(SIMPLEOT_SENDER * s,
 
 	ge4x_sub(&P1, &s->yS, &P0); // 64(T-yR^i)
 	ge4x_hash(keys[1][0], s->S_pack, Rs_pack, &P1); // E_2(T - yR^i)
-}
 
+	return true;
+}

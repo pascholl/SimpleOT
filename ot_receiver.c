@@ -13,19 +13,31 @@ void receiver_maketable(SIMPLEOT_RECEIVER * r)
 
 void receiver_procS(SIMPLEOT_RECEIVER * r)
 {
+	bool success = receiver_procS_check(r);
+	if (!success)
+	{
+		fprintf(stderr, "Error: point decompression failed\n");
+		exit(-1);
+	}
+}
+
+bool receiver_procS_check(SIMPLEOT_RECEIVER * r)
+{
 	int i;
 
 	ge25519 S;
 
 	if (ge25519_unpack_vartime(&S, r->S_pack) != 0)
 	{ 
-		fprintf(stderr, "Error: point decompression failed\n"); exit(-1);
+		return false;
 	}
 
 	for (i = 0; i < 3; i++) ge25519_double(&S, &S); // 8S
 
 	ge25519_pack(r->S_pack, &S); // E_1(S)
 	ge_to_4x(&r->S, &S);
+
+	return true;
 }
 
 void receiver_rsgen(SIMPLEOT_RECEIVER * r, 
