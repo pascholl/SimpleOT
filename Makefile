@@ -1,7 +1,6 @@
 CC = /usr/bin/gcc
 CFLAGS = -O3 -Wall -Wextra
-
-######################################################
+AS = $(CC) $(CFLAGS) -c
 
 OBJS+= Keccak-simple.o
 OBJS+= randombytes.o
@@ -83,8 +82,8 @@ ot_receiver_test: ot_receiver_test.o $(OBJS)
 %.o: %.c 
 	$(CC) $(CFLAGS) -c $<
 
-%.o: %.s
-	$(CC) $(CFLAGS) -c $<
+%.o: %.S
+	$(AS) $<
 
 ######################################################
 
